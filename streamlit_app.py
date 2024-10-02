@@ -9,8 +9,13 @@ first_name = st.text_input("Nama Depan:")
 # Input untuk nama belakang
 last_name = st.text_input("Nama Belakang:")
 
-# Menampilkan pesan
-if first_name and last_name:  # Memeriksa apakah kedua input terisi
-    st.write('Halo,', first_name, last_name)
-else:
-    st.write("Silakan masukkan nama lengkap kamu!")
+# Pilihan untuk jenis kelamin
+gender = st.selectbox("Jenis Kelamin:", ["Pilih", "Pria", "Wanita"])
+
+# Tombol untuk mengirimkan
+if st.button("Sapa!"):
+    if first_name and last_name and gender != "Pilih":
+        greeting = f'Halo, {first_name} {last_name}! Selamat datang!'
+        st.write(greeting)
+    else:
+        st.write("Silakan lengkapi semua kolom!")
