@@ -1,12 +1,16 @@
 import streamlit as st
 
-st.title("🎈 my haechanie")
+# Judul aplikasi
+st.title("🎈 Masukkan Nama Lengkap")
 
-name = st.text_input("Name :")
+# Input untuk nama depan
+first_name = st.text_input("Nama Depan:")
 
-st.write('Helo,', name)
+# Input untuk nama belakang
+last_name = st.text_input("Nama Belakang:")
 
-if(name):
-    st.write('helo,', name)
+# Menampilkan pesan
+if first_name and last_name:  # Memeriksa apakah kedua input terisi
+    st.write('Halo,', first_name, last_name)
 else:
-    st.write("isi nama sayang!!!")
+    st.write("Silakan masukkan nama lengkap kamu!")
